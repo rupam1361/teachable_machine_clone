@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../client/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div id="appBar">
+      <div>ML</div>
+      <div>
+        <button style="margin-right: 20px" id="loginBtn">Login</button>
+      </div>
+    </div>
+    <br /> -->
+    <div id="mainContent">
+      <div>
+        <h2 style="margin: 5px; margin-bottom: 10px">
+          1. Prepare your datasets..
+        </h2>
+        <div id="visual">
+          <div>
+            <p style="font-size: 16px">Create a dataset..</p>
+            <input type="text" placeholder="Enter label name" id="labelInput" />
+
+            <div id="displayImageWrapper">
+              <br />
+
+              <input
+                type="file"
+                id="selectImageFolder"
+                name="myImage"
+                multiple
+              />
+              <br />
+              <span style="font-size: 11px; margin-top: 6px"
+                >(Images must be of size 28 * 28 pixels)</span
+              >
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+        <div
+          id="noTrainingData"
+          style="
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+            font-size: 16px;
+          "
+        >
+          No Datasets found..!!
+        </div>
+        <br />
+
+        <div id="destDir"></div>
+      </div>
+      <br />
+      <div style="margin: 1px 60px">
+        <h2 style="margin: 5px; margin-bottom: 10px; margin-left: 0">
+          2. Train your model..
+        </h2>
+        <div>
+          <div style="width: 100%">
+            <input
+              type="number"
+              id="epoch"
+              placeholder="Epoch (in number, range 4 - 150)"
+              min="4"
+              max="150"
+            />
+            <button id="train">Train</button>
+          </div>
+        </div>
+        <div>
+          <div id="trainingStatus" style="display: none"></div>
+
+          <div id="trainDisplayWrapper" style="display: none"></div>
+          <div id="historyLabel">Training history</div>
+          <div
+            style="
+              border: 2px solid rgb(228, 228, 228);
+              border-radius: 4px;
+              padding: 6px 12px;
+              margin-top: 12px;
+              height: 260px;
+            "
+            id="historyWrapper"
+          >
+            <div id="trainDisplayWrapper1"></div>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px">
+          <h2 style="margin: 5px; margin-bottom: 10px; margin-left: 0">
+            3. Make predictions..
+          </h2>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="chooseFile"
+            name="chooseInputType"
+            value="chooseFile"
+            checked
+          />
+          <label for="chooseFile">Choose file</label>
+          <input
+            type="radio"
+            id="drawOnCanvas"
+            name="chooseInputType"
+            value="drawOnCanvas"
+          />
+          <label for="drawOnCanvas">Draw on a canvas</label>
+        </div>
+        <div id="canvasWrapper" style="display: none"></div>
+        <div id="chooseFileWrapper">
+          <input type="file" name="predictionImage" id="predictionImage" />
+          <div id="predictionImageWrapper"></div>
+        </div>
+        <div id="canvasWrapper1"></div>
+      </div>
+      <div style="margin-left: 70px">
+        <h2 style="margin: 5px 0 10px 0">How it works..?</h2>
+
+        <div
+          style="
+            /* border: 2px solid rgb(228, 228, 228); */
+            border-radius: 4px;
+            padding: 6px 0;
+            margin-top: 12px;
+            height: 260px;
+            width: 300px;
+          "
+          id="instructions"
+        >
+          <span>
+            This is a small demonstration of how a Machine Learning works..here
+            we will be using grayscale images as inputs
+          </span>
+          <div>
+            <h3>Prepare your datasets</h3>
+            <ul style="padding-left: 20px">
+              <li>
+                <span
+                  >You will first need to prepare your datasets, by adding
+                  images (28 * 28 pixels), with a label name</span
+                >
+              </li>
+              <br />
+              <li>
+                <span
+                  >After clicking the "upload" button, this images will get
+                  saved to the backend with the label name as their folder
+                  name</span
+                >
+              </li>
+              <!-- <li></li> -->
+            </ul>
+          </div>
+          <div>
+            <h3>Training the model</h3>
+            <ul style="padding-left: 20px">
+              <li>
+                <span
+                  >After the datasets are ready, you can start to train the
+                  model (minimun 2 datasets are required for training..)</span
+                >
+              </li>
+              <br />
+              <li>
+                <span
+                  >Provide the no of epochs (or rounds) you want to train the
+                  model (value must be between 4 - 150)</span
+                >
+              </li>
+              <br />
+              <li>
+                <span
+                  >The training history will be shown on the "Training history"
+                  box</span
+                >
+              </li>
+              <br />
+              <li>
+                <span
+                  >After the training is finished, the model will be saved in
+                  your "client/model" directory</span
+                >
+              </li>
+              <!-- <li></li> -->
+            </ul>
+          </div>
+          <div>
+            <h3>Making predictions</h3>
+            <ul style="padding-left: 20px">
+              <li>
+                <span
+                  >After the training is over and the model is saved, you can
+                  start making predictions and see the results</span
+                >
+              </li>
+              <br />
+              <li>
+                <span
+                  >You can either choose an grayscale image file or draw on a
+                  canvas</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div id="modalWrapper">
+      <h2>Modal</h2>
+    </div> -->
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+    integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="../client/main.js"></script>
+</html>

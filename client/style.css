@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#appBar {
+  background-color: rgb(197, 197, 197);
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#mainContent {
+  /* text-align: center; */
+  /* display: block; */
+  /* margin: 0 auto; */
+  font-family: Roboto;
+  font-size: 13px;
+  margin-top: 10px;
+
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+#star,
+#myCanvas {
+  border-radius: 4px;
+  border: 2px solid rgb(233, 233, 233);
+}
+
+#btnWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#visual {
+  margin: 0 5px;
+  border: 2px solid rgb(209, 209, 209);
+  padding: 10px;
+  padding-top: 0;
+  border-radius: 4px;
+}
+
+.box {
+  border: 1px solid black;
+
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#destDir {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  /* height: 400px;
+  overflow-y: scroll; */
+}
+
+#box {
+  border: 2px solid rgb(209, 209, 209);
+  padding: 6px;
+  margin: 6px 3px;
+  width: 120px;
+  height: 160px;
+  border-radius: 6px;
+}
+
+#displayImage {
+  border: 1px solid rgb(102, 102, 102);
+}
+
+#destLabelWrapper {
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#destImageWrapper {
+  margin-top: 10px;
+  height: 110px;
+  overflow-y: scroll;
+}
+
+#destDisplayImage {
+  border: 1px solid rgb(163, 163, 163);
+  border-radius: 4px;
+}
+
+#canvasWrapper {
+  margin-top: 20px;
+}
+
+#chooseFileWrapper {
+  margin-top: 20px;
+  width: 380px;
+}
+
+#trainingStatus {
+  margin: 14px 0;
+  font-size: 14px;
+}
+
+#trainDisplayWrapper {
+  display: block;
+}
+
+#epochWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#epoch {
+  width: 75%;
+}
+
+#train {
+  width: 21%;
+}
+
+#progressBarWrapper {
+  display: inline-block;
+  position: relative;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#progressBar {
+  display: inline-block;
+  position: absolute;
+  height: 4px;
+
+  border-radius: 4px;
+  background-color: rgb(94, 93, 93);
+}
+
+#results {
+  display: flex;
+  justify-content: space-between;
+}
+
+#historyLabel {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+#modalWrapper {
+  background-color: white;
+  height: 200px;
+  width: 400px;
+  border: 1px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
