@@ -148,6 +148,7 @@ function getTrainingData() {
 
 getTrainingData();
 
+// STARTING THE TRAINING PROCESS
 const API_URL = "http://localhost:3000";
 
 const socket = io(API_URL);
@@ -304,6 +305,9 @@ trainBtn.addEventListener("click", train);
 
 //*********************************************************** */
 
+//PREDICT THE RESULTS
+
+// USING THE CANVAS
 let canvas;
 let canvasWrapper, canvasWrapper1;
 
@@ -589,6 +593,7 @@ const fashionLabels = [
   "Z",
 ];
 
+// USING IMAGE FILE
 const predictionImage = document.getElementById("predictionImage");
 const predictionImageWrapper = document.getElementById(
   "predictionImageWrapper"
