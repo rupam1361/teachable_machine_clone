@@ -41,6 +41,7 @@ app.get("/destDir/:folder/:file", (req, res) => {
   );
 });
 
+//CREATE A DESTINATION DIRECTORY TO UPLOAD THE IMAGE FILES..
 const storage = multer.diskStorage({
   destination: `./uploads`,
 
