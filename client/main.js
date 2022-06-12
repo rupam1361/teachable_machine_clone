@@ -305,7 +305,7 @@ trainBtn.addEventListener("click", train);
 
 //*********************************************************** */
 
-//PREDICT THE RESULTS
+//PREDICTING THE RESULTS
 
 // USING THE CANVAS
 let canvas;
