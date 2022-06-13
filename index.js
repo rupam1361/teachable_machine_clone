@@ -200,9 +200,6 @@ app.post("/train", (req, res) => {
     const trainImages = data.images;
     const trainLabels = data.labels;
 
-    console.log(trainImages);
-    console.log(trainLabels);
-
     const trainData1 = loadImages(TRAINING_IMAGES_DIR);
     let totalBatch = Math.round(trainData1[0].length / 32);
 
@@ -291,9 +288,6 @@ app.post("/predict", (req, res) => {
       } else {
         console.log(`File uploaded successfully..`);
 
-        // console.log(req.body);
-        console.log(req.file);
-
         if (req.file.path != undefined) {
           const imageToPixels = async (imgPath) => {
             const pixeldata = [];
@@ -311,7 +305,6 @@ app.post("/predict", (req, res) => {
           };
 
           const predictImage = (imgPath) => {
-            console.log(imageToPixels(imgPath));
             return imageToPixels(imgPath).then((pixeldata) => {
               const imageTensor = tf
                 .tensor(pixeldata, [28, 28, 1])

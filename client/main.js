@@ -77,10 +77,6 @@ function uploadFiles() {
         .then(() => {
           window.location.href = "/";
         });
-
-      console.log(labelInput.value);
-
-      console.log("Upload...");
     }
   }
 }
@@ -96,7 +92,6 @@ function getTrainingData() {
   axios.get("/getTrainingData").then((res) => {
     for (let i = 0; i < res.data.length; i++) {
       labels.push(res.data[i].folder);
-      console.log(res.data[i].folder);
     }
     datasetsLength = res.data.length;
 
@@ -141,7 +136,6 @@ function getTrainingData() {
       box.append(andMoreText);
 
       destDir.append(box);
-      // destLabelWrapper.append(deleteBtn);
     }
   });
 }
@@ -256,7 +250,6 @@ function completedEpoch(epochHistoryArr, totalEpoch) {
 
     accuracy.textContent = `Acc: ${epochHistoryArr[i].logs.acc.toFixed(3)}`;
     accuracy.style.fontSize = "13px";
-    console.log(epochHistoryArr);
 
     epochWrapper.append(loss);
     epochWrapper.append(accuracy);
@@ -286,7 +279,6 @@ function train() {
             epoch: epoch.value,
           })
           .then((res) => {
-            console.log(res.data);
             if (confirm(res.data.message) == true) {
               window.location.href = "/";
             }
@@ -340,7 +332,6 @@ async function setup() {
   canvas.width = width;
 
   const data = ctx.getImageData(10, 20, 30, 30);
-  console.log(data);
 
   canvas.addEventListener("mousemove", onMouseUpdate);
   canvas.addEventListener("mousedown", onMouseDown);
@@ -400,7 +391,6 @@ async function predict(canvas1) {
   let predictions = await model.predict(tensor).data();
 
   let results = Array.from(predictions);
-  console.log(results);
 
   let index = results.findIndex((e) => e === 1);
 
@@ -413,8 +403,6 @@ async function predict(canvas1) {
     span.style.fontSize = "30px";
     span.style.marginLeft = "5px";
     labelResults.append(span);
-
-    console.log(fashionLabels[index]);
   }
 }
 
@@ -600,7 +588,6 @@ const br5 = document.createElement("br");
 let imageType;
 
 predictionImage.addEventListener("change", (e) => {
-  console.log(e.target.files);
   var child = predictionImageWrapper.lastElementChild;
   while (child) {
     predictionImageWrapper.removeChild(child);
@@ -629,7 +616,6 @@ predictionImage.addEventListener("change", (e) => {
 
 async function predict1() {
   axios.post(`${API_URL}/predict`, formDataForPredictedImage).then((res) => {
-    console.log(fashionLabels[res.data.score]);
     canvasWrapper1.innerHTML = fashionLabels[res.data.score];
     canvasWrapper1.style.fontSize = "30px";
     canvasWrapper1.style.marginLeft = "5px";
@@ -662,9 +648,3 @@ chooseFile.forEach((item) => {
     }
   });
 });
-
-//******************************************* */
-
-// let loginBtn = document.getElementById("loginBtn");
-
-// loginBtn.addEventListener("click", () => console.log("login"));
