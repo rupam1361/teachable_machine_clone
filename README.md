@@ -2,7 +2,7 @@
 
 # Starting the project
 Download the repo.
-Go to the project directory and run "nom install". This will install all the dependencies.
+Go to the project directory and run "npm install". This will install all the dependencies.
 Then run "npm start" to start the project.
 
 # About the project
