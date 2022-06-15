@@ -3,7 +3,7 @@
 # Starting the project
 Download the repo.
 Go to the project directory and run "npm install". This will install all the dependencies.
-Then run "npm start" to start the project. Your project will run on "http://localhost:3000"
+Then run "node index" to start the project. Your project will run on "http://localhost:3000"
 
 # About the project
 A project to start Machine Learning on the browser built with Tensorflow Js. This project works with images as inputs.
