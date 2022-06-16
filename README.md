@@ -20,3 +20,6 @@ A project to start Machine Learning on the browser built with Tensorflow Js. Thi
 # Making predictions
 1. After the training is over and the model is saved, you can start making predictions and see the results.
 2. You can either choose an grayscale image file or draw on a canvas.
+
+
+Medium: https://medium.com/@rupamswargiary13/a-teachable-machine-clone-9a067e813b39
